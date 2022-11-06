@@ -2,9 +2,9 @@
   "name": "Rocket.Q",
   "version": "1.0.0",
   "description": "Projeto desenvolvido para gerenciar perguntas anonimas de usuários direcionada ao dono da pagina. Projeto desenvolvido na semana NLW Rocketseat na missão discover",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "nodemon ."
   },
   "keywords": [],
   "author": "Henrique Maciel",
@@ -12,5 +12,8 @@
   "dependencies": {
     "ejs": "^3.1.8",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
