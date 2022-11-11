@@ -7,10 +7,10 @@ module.exports={
       
       let roomId
 
-      for(var i =0; i < 6;i++){
-        i == 0 ? roomId = Math.floor(Math.random()*10).toString():
-        roomId+= Math.floor(Math.random*10).toString() 
-      }
+      for(var i = 0; i < 6; i++){
+        i == 0 ? roomId = Math.floor(Math.random() * 10).toString() :
+        roomId += Math.floor(Math.random() * 10).toString()
+         }
 
       await db.run(`INSERT INTO rooms(
         id,
