@@ -35,7 +35,7 @@
           #<%= roomId %>
             <img src="/images/copy.svg" alt="Copiar numero da Sala" />
         </div>
-        <a href="#" class="button">
+        <a href="/create-pass" class="button">
           <img src="/images/users-white.svg" alt="Criar uma Sala" />
           Criar Sala
         </a>
@@ -63,59 +63,62 @@
         <h2 class="sr-only">perguntas da comunidade</h2>
         <div class="questions">
 
-          <% questions.forEach(question=> { %>
+          <% if (isNoQuestions){ %>
+            <%- include('parts/no-question') %>
+              <% } %>
 
-            <div class="question-wrapper">
-              <div class="question-content">
-                <div class="user">
-                  <img src="/images/user.svg" alt="user" />
-                </div>
-                <div class="question">
-                  <p>
-                    <%= question.title %>
-                  </p>
-                </div>
-              </div>
-              <div class="actions">
-                <a href="#" class="check" data-id="<%= question.id %> ">
-                  <img src="/images/check.svg" alt="marca como lida" />
-                  Marca como lida
-                </a>
-                <a href="#" class="delete" data-id="<%= question.id %>">
-                  <img src="/images/trash.svg" alt="Excluir" />
-                  Excluir
-                </a>
-              </div>
-            </div>
-
-
-            <% }); %>
-
-
-              <% questionsRead.forEach(questionRead=> { %>
-
-                <div class="question-wrapper read">
-                  <div class="question-content">
-                    <div class="user">
-                      <img src="/images/user.svg" alt="user" />
+                <% questions.forEach(question=> { %>
+                  <div class="question-wrapper">
+                    <div class="question-content">
+                      <div class="user">
+                        <img src="/images/user.svg" alt="user" />
+                      </div>
+                      <div class="question">
+                        <p>
+                          <%= question.title %>
+                        </p>
+                      </div>
                     </div>
-                    <div class="question">
-                      <p>
-                        <%= questionRead.title %>
-                      </p>
+                    <div class="actions">
+                      <a href="#" class="check" data-id="<%= question.id %> ">
+                        <img src="/images/check.svg" alt="marca como lida" />
+                        Marca como lida
+                      </a>
+                      <a href="#" class="delete" data-id="<%= question.id %>">
+                        <img src="/images/trash.svg" alt="Excluir" />
+                        Excluir
+                      </a>
                     </div>
                   </div>
-                  <div class="actions">
-                    </a>
-                    <a href="#" class="delete" data-id="<%= questionRead.id %> ">
-                      <img src="/images/trash.svg" alt="Excluir" />
-                      Excluir
-                    </a>
-                  </div>
-                </div>
 
 
-                <% }); %>
+                  <% }); %>
+
+
+                    <% questionsRead.forEach(questionRead=> { %>
+
+                      <div class="question-wrapper read">
+                        <div class="question-content">
+                          <div class="user">
+                            <img src="/images/user.svg" alt="user" />
+                          </div>
+                          <div class="question">
+                            <p>
+                              <%= questionRead.title %>
+                            </p>
+                          </div>
+                        </div>
+                        <div class="actions">
+                          </a>
+                          <a href="#" class="delete" data-id="<%= questionRead.id %> ">
+                            <img src="/images/trash.svg" alt="Excluir" />
+                            Excluir
+                          </a>
+                        </div>
+                      </div>
+
+
+                      <% }); %>
 
 
 
